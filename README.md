@@ -124,6 +124,7 @@ SnakeBoy-Arduino-Game/
 
 2. **Install dependencies**
    - Download the `LedControl` library in Arduino IDE:  `Sketch → Include Library → Manage Libraries` → Search "LedControl"
+   - Download the `MD_MAX72XX` library in Arduino IDE:  `Sketch → Include Library → Manage Libraries` → Search "MD_MAX72XX"
 
 3. **Configure hardware**
    - Review `config.h` and verify pin mappings match your setup
