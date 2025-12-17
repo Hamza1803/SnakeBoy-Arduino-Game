@@ -204,6 +204,4 @@ For complete license details, see the [LICENSE](./LICENSE) file or visit [creati
 - Verify buzzer polarity and D12 connection
 - Check that `sound.cpp` is compiled
 
-For more detailed troubleshooting, see `docs/troubleshooting.md`.
-
 ---
