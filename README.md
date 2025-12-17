@@ -77,22 +77,25 @@ SnakeBoy is a handheld console featuring the classic Snake game displayed on a 3
 ```
 SnakeBoy-Arduino-Game/
 ├── src/
-│   ├── snake. cpp           # Main game logic and state machine
-│   ├── display.cpp         # LED matrix driver and rendering
-│   ├── inputs.cpp          # Joystick and button input handling
-│   ├── sound.cpp           # Audio synthesis and melody management
-│   ├── led. cpp             # Status LED control
-│   └── config.h            # Hardware configuration and pin mappings
-├── hardware/
+│   └── main/
+│   │   ├── snake. cpp           # Main game logic and state machine
+│   │   ├── display.cpp         # LED matrix driver and rendering
+│   │   ├── inputs.cpp          # Joystick and button input handling
+│   │   ├── sound.cpp           # Audio synthesis and melody management
+│   │   ├── led. cpp             # Status LED control
+│   │   └── config.h            # Hardware configuration and pin mappings
+│   └── test/
+│   │   └── test_display.txt
+│   │   └── test_input.txt
+│   │   └── test_led_buzzer.txt
+├── enclosure/
 │   ├── case/               # OpenSCAD 3D models (parametric design)
 │   │   ├── front_panel.scad
 │   │   ├── back_panel.scad
 │   │   └── button. scad
+│   │   └── button. scad
+│   │   └── button. scad
 │   └── diagrams/           # Wiring and schematic diagrams
-├── docs/
-│   ├── assembly_guide.md   # Step-by-step assembly instructions
-│   ├── troubleshooting.md  # Common issues and solutions
-│   └── photos/             # Project build photos
 ├── README.md               # This file
 └── LICENSE                 # CC BY-NC-SA 4.0 License
 ```
