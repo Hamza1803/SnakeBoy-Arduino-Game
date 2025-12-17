@@ -1,5 +1,8 @@
 # 🐍 SnakeBoy – An Arduino-Powered Snake Game Console
 
+![IMG_2565](https://github.com/user-attachments/assets/c807cfd7-ba09-4555-bc9e-a67e660109d3)
+
+
 A handheld, retro-inspired Snake game console built with Arduino and open-source hardware. SnakeBoy combines embedded programming, hardware optimization, and mechanical design into an accessible and highly optimized gaming device.
 
 **Developed as part of the Creative Electronics course in the Electronics Engineering program at the University of Málaga.**
