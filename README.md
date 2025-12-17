@@ -1,75 +1,209 @@
-🐍 SnakeBoy – An Arduino-Powered Snake Game Console
-This repository contains the source code, 3D models, wiring diagrams, and documentation for SnakeBoy, a handheld Snake game console developed as part of the Creative Electronics course in the Electronic Systems Engineering degree at the University of Málaga (UMA).
+# 🐍 SnakeBoy – An Arduino-Powered Snake Game Console
 
-The project was developed to demonstrate embedded programming, hardware optimization, and mechanical integration using accessible components and open-source tools.
+A handheld, retro-inspired Snake game console built with Arduino and open-source hardware. SnakeBoy combines embedded programming, hardware optimization, and mechanical design into an accessible and highly optimized gaming device.
 
-📁 Project Structure
+**Developed as part of the Creative Electronics course in the Electronics Engineering program at the University of Málaga.**
 
-![IMG_2565](https://github.com/user-attachments/assets/375ce58e-87b6-4d63-b930-4513596db9c1)
+---
 
+## 📋 Overview
 
-🕹️ Main Project: SnakeBoy
-Core Concept: A retro-inspired, battery-free handheld console that plays the classic Snake game on a 32×8 LED matrix, using an Arduino Leonardo-compatible board (Save Maker I).
+SnakeBoy is a handheld console featuring the classic Snake game displayed on a 32×8 LED matrix. Built around an Arduino Leonardo-compatible board (Save Maker I), this project demonstrates practical embedded systems design with real-time gameplay, persistent high score storage, and optimized resource utilization.
 
-🔧 Key Features
-Real-time gameplay with joystick + 4 directional buttons
-Sound feedback via PWM buzzer (6 melodies)
-Persistent high score stored in EEPROM
-State-machine-driven game logic (no delay())
-<15 KB Flash / ~2.5 KB RAM usage — highly optimized
-Custom 7×5 pixel font and menu animations
-3D-printed enclosure with precise cutouts for all components
+### 🎯 Design Goals
+- Demonstrate embedded programming and hardware optimization techniques
+- Create a fully functional gaming device using accessible components
+- Utilize open-source tools and methodologies
+- Achieve minimal resource footprint (<15 KB Flash, ~2. 5 KB RAM)
 
-📦 Hardware Used
-Save Maker I (Arduino Leonardo-compatible)
-4× cascaded MAX7219 8×8 LED matrices (32×8 total)
-PS4-style analog joystick (with L3 button)
-4× tactile push buttons
-Red 5mm status LED
-Passive buzzer
-External 5V/1A USB power supply
-⚠️ Important: The LED matrix requires external 5V power with shared ground to avoid flickering and instability.
+---
 
-🔧 Pinout Configuration
-|-------------------|-------------|------------------------------|
-| Component         | Arduino Pin | Function                     |
-|-------------------|-------------|------------------------------|
-| MAX7219 DATA      | D13         | Serial data input            |
-| MAX7219 CLK       | D11         | Clock signal                 |
-| MAX7219 LOAD      | D10         | Latch/load signal            |
-| Buzzer            | D12         | PWM audio output             |
-| Status LED        | D7          | Visual indicator             |
-| Joystick X        | A0          | X-axis analog input          |
-| Joystick Y        | A1          | Y-axis analog input          |
-| L3 Button         | D9          | Joystick push button         |
-| Up Button         | D8          | Directional input            |
-| Down Button       | D4          | Directional input            |
-| Left Button       | D5          | Directional input            |
-| Right Button      | D6          | Directional input            |
-|-------------------|-------------|------------------------------|
-Note: All digital buttons use the internal INPUT_PULLUP feature, eliminating the need for external resistors.
+## 🕹️ Key Features
 
-📚 Contents
-This repository includes:
+- **Real-time Gameplay**:  Responsive joystick and directional button controls
+- **Audio Feedback**: 6 distinct melodies via PWM buzzer
+- **Persistent Storage**:  High scores saved in EEPROM memory
+- **Efficient Architecture**: State-machine-driven game logic with zero blocking delays
+- **Compact Footprint**: <15 KB Flash / ~2.5 KB RAM usage — highly optimized
+- **Custom Graphics**: 7×5 pixel font and smooth menu animations
+- **Custom Enclosure**: 3D-printed case with precision-engineered component cutouts
+- **Status Indicator**: Visual feedback LED for game states
+- **USB Powered**: Connected operation via 5V/1A USB power supply
 
-Modular Arduino firmware (snake.cpp, display.cpp, inputs.cpp, sound.cpp, led.cpp)
-OpenSCAD parametric case design (front + back panels + button)
-Diagrams
-Tests
-Project documentation and photos
+---
 
-👥 Contributors
-SnakeBoy was created by:
+## 📦 Hardware Specifications
 
-Hamza Lotfi
-Andreea Simion
-Both are students in the Degree in Electronic Systems Engineering at the University of Málaga, School of Telecommunications.
+### Core Components
 
-Special thanks to instructors Luis, Arcadio, and Paco, and to Max Nelson, Luke Van Scherrenburg, and Sean Nussdorfer (California State University Maritime Academy) for their inspiring Instructables project.
+| Component | Specification |
+|-----------|---------------|
+| **Microcontroller** | Save Maker I (Arduino Leonardo-compatible) |
+| **Display** | 4× cascaded MAX7219 8×8 LED matrices (32×8 total resolution) |
+| **Input:  Analog** | PS4-style analog joystick with integrated L3 push button |
+| **Input: Digital** | 4× tactile push buttons (Up, Down, Left, Right) |
+| **Audio Output** | Passive buzzer with PWM modulation |
+| **Visual Indicator** | Red 5mm status LED |
+| **Power Supply** | External 5V/1A USB power supply (wired connection) |
 
-🔗 External Links
+### Important Notes
+⚠️ **LED Matrix Power**:  The LED matrix **must be powered externally via 5V** with a **shared ground connection** to prevent flickering and signal instability.
 
-- 📖 Full Instructables Tutorial: [SnakeBoy – An Arduino-Powered Snake Game Console](https://www.instructables.com/SnakeBoy-an-Arduino-Powered-Snake-Game-Console/)
-  
-⭐️ License
-Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+---
+
+## 🔧 Pinout Configuration
+
+| Component | Arduino Pin | Function |
+|-----------|------------|----------|
+| MAX7219 Data | D13 | Serial data input |
+| MAX7219 Clock | D11 | Clock signal |
+| MAX7219 Load | D10 | Latch/load signal |
+| Buzzer | D12 | PWM audio output |
+| Status LED | D7 | Visual state indicator |
+| Joystick X-Axis | A0 | Analog X input |
+| Joystick Y-Axis | A1 | Analog Y input |
+| Joystick Button (L3) | D9 | Push button input |
+| Up Button | D8 | Directional input |
+| Down Button | D4 | Directional input |
+| Left Button | D5 | Directional input |
+| Right Button | D6 | Directional input |
+
+**Note**: All digital buttons utilize the internal `INPUT_PULLUP` feature, eliminating the need for external pull-up resistors.
+
+---
+
+## 📁 Repository Structure
+
+```
+SnakeBoy-Arduino-Game/
+├── src/
+│   ├── snake. cpp           # Main game logic and state machine
+│   ├── display.cpp         # LED matrix driver and rendering
+│   ├── inputs.cpp          # Joystick and button input handling
+│   ├── sound.cpp           # Audio synthesis and melody management
+│   ├── led. cpp             # Status LED control
+│   └── config.h            # Hardware configuration and pin mappings
+├── hardware/
+│   ├── case/               # OpenSCAD 3D models (parametric design)
+│   │   ├── front_panel.scad
+│   │   ├── back_panel.scad
+│   │   └── button. scad
+│   └── diagrams/           # Wiring and schematic diagrams
+├── docs/
+│   ├── assembly_guide.md   # Step-by-step assembly instructions
+│   ├── troubleshooting.md  # Common issues and solutions
+│   └── photos/             # Project build photos
+├── README.md               # This file
+└── LICENSE                 # CC BY-NC-SA 4.0 License
+```
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Arduino IDE 1.8.0 or later
+- Arduino Leonardo board or compatible (Save Maker I)
+- MAX7219 LED matrix module (32×8)
+- Joystick and push buttons
+- Buzzer and status LED
+- 5V/1A USB power supply
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Hamza1803/SnakeBoy-Arduino-Game. git
+   ```
+
+2. **Install dependencies**
+   - Download the `LedControl` library in Arduino IDE:  `Sketch → Include Library → Manage Libraries` → Search "LedControl"
+
+3. **Configure hardware**
+   - Review `config.h` and verify pin mappings match your setup
+   - Ensure external 5V power is connected to the LED matrix
+
+4. **Upload firmware**
+   - Connect your Arduino Leonardo board via USB
+   - Open `snake.cpp` in Arduino IDE
+   - Select Board: Arduino Leonardo
+   - Click Upload
+
+5. **Connect power**
+   - Connect the 5V/1A USB power supply to the designated connector
+   - The device should power on automatically
+
+---
+
+## 🎮 Gameplay Instructions
+
+- **Move**: Use joystick or directional buttons (Up, Down, Left, Right)
+- **Start Game**: Press any button or move joystick
+- **Pause**: Press L3 button (joystick button)
+- **Game Over**:  Collision with wall or self triggers game over
+- **High Score**:  Automatically saved to EEPROM
+
+---
+
+## 👥 Contributors
+
+**Project Team**:  
+- **Hamza Lotfi** – Hardware design & firmware development
+- **Andreea Simion** – Mechanical design & testing
+
+**Educational Institution**: 
+Degree in Electronic Systems Engineering
+University of Málaga, School of Telecommunications
+
+**Special Thanks**:
+- Course Instructors: Luis, Arcadio, and Paco
+- Inspiration and mentorship:  Max Nelson, Luke Van Scherrenburg, and Sean Nussdorfer (California State University Maritime Academy)
+
+---
+
+## 📖 Additional Resources
+
+- **Full Tutorial**: [SnakeBoy – An Arduino-Powered Snake Game Console](https://www.instructables.com/SnakeBoy-an-Arduino-Powered-Snake-Game-Console/) on Instructables
+- **Arduino Leonardo Documentation**: [arduino. cc/reference](https://www.arduino.cc/reference/en/)
+- **MAX7219 Datasheet**: Available from component suppliers
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
+
+**You are free to**:
+- Share and adapt the material
+- Use for educational purposes
+
+**Under the terms that you**:
+- Provide attribution to the original creators
+- Do not use commercially
+- Share derivative works under the same license
+
+For complete license details, see the [LICENSE](./LICENSE) file or visit [creativecommons.org](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+---
+
+## 🐛 Troubleshooting
+
+### LED Matrix not displaying
+- Verify external 5V power is connected with shared ground
+- Check MAX7219 pin connections (DATA, CLK, LOAD)
+- Test with the LedControl example sketch
+
+### Joystick not responding
+- Calibrate analog input in `inputs.cpp`
+- Verify A0 and A1 connections
+- Check for loose wiring
+
+### Sound not working
+- Verify buzzer polarity and D12 connection
+- Check that `sound.cpp` is compiled
+
+For more detailed troubleshooting, see `docs/troubleshooting.md`.
+
+---
+
+**Made with ❤️ by the SnakeBoy team**
