@@ -154,16 +154,12 @@ SnakeBoy-Arduino-Game/
 ## 👥 Contributors
 
 **Project Team**:  
-- **Hamza Lotfi** – Hardware design & firmware development
-- **Andreea Simion** – Mechanical design & testing
+- **Hamza Lotfi** 
+- **Andreea Simion** 
 
 **Educational Institution**: 
 Degree in Electronic Systems Engineering
 University of Málaga, School of Telecommunications
-
-**Special Thanks**:
-- Course Instructors: Luis, Arcadio, and Paco
-- Inspiration and mentorship:  Max Nelson, Luke Van Scherrenburg, and Sean Nussdorfer (California State University Maritime Academy)
 
 ---
 
@@ -172,7 +168,7 @@ University of Málaga, School of Telecommunications
 - **Full Tutorial**: [SnakeBoy – An Arduino-Powered Snake Game Console](https://www.instructables.com/SnakeBoy-an-Arduino-Powered-Snake-Game-Console/) on Instructables
 - **Arduino Leonardo Documentation**: [arduino. cc/reference](https://www.arduino.cc/reference/en/)
 - **MAX7219 Datasheet**: Available from component suppliers
-
+- **Video Full Game** : https://youtu.be/4og9s7oPVPE
 ---
 
 ## ⚖️ License
